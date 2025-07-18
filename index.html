@@ -2,89 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>X-Code Academy</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fadeIn {
-      animation: fadeIn 1s ease-out forwards;
-    }
-  </style>
 </head>
-<body class="bg-gray-900 text-gray-200">
+<body class="bg-gray-100 text-gray-900 font-sans">
 
-  <!-- Header -->
-  <header class="bg-gray-800 text-white p-4 shadow-md animate-fadeIn">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">X-Code Academy</h1>
-      <p class="text-sm">+91-9440757845</p>
+  <!-- Sticky Navbar -->
+  <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+      <div class="flex items-center gap-2">
+        <img src="your-logo.png" alt="Logo" class="w-10 h-10" />
+        <span class="text-xl font-bold">X-Code Academy</span>
+      </div>
+      <nav class="space-x-4 text-sm font-semibold">
+        <a href="#courses" class="hover:text-blue-600">Courses</a>
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="bg-gray-700 py-12 animate-fadeIn">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4 text-white">Empowering Future Tech Leaders</h2>
-      <p class="text-lg text-gray-300">Learn AWS, Azure, GCP, DevOps, Python, Java, .NET, SAP, Testing & more</p>
+  <!-- Hero Section -->
+  <section class="pt-24 bg-blue-700 text-white text-center py-20">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-4">Empowering Future Tech Leaders</h1>
+      <p class="text-lg mb-6">Master Full Stack Development, Cloud, DevOps, Data Science & More</p>
+      <a href="#courses" class="bg-white text-blue-700 font-semibold px-6 py-2 rounded hover:bg-gray-200">Explore Courses</a>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="py-10 px-4 max-w-6xl mx-auto animate-fadeIn">
-    <h3 class="text-2xl font-semibold mb-4 text-white">About X-Code Academy</h3>
-    <p class="text-gray-300">
-      X-Code Academy is a leading IT training institute offering cloud and programming courses with real-time project training, proxy and job support, and placement assistance.
-    </p>
-  </section>
+  <!-- Courses Section -->
+  <section id="courses" class="bg-gray-100 py-16 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10 text-gray-800">Our Popular Courses</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold text-lg text-blue-600">Full Stack Java</h3>
+          <p class="text-gray-600 mt-2">Core Java, Spring Boot, Microservices & Project</p>
+        </div>
 
-  <!-- Courses -->
-  <section class="py-10 px-4 bg-gray-800 animate-fadeIn">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-2xl font-semibold mb-6 text-white">Popular Courses</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-          <h4 class="font-bold text-white">AWS & Azure</h4>
-          <p class="text-gray-300">Cloud fundamentals, EC2, VPC, IAM, Storage, and real-time labs.</p>
+        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold text-lg text-blue-600">Python Full Stack</h3>
+          <p class="text-gray-600 mt-2">Python, Django, REST APIs, React</p>
         </div>
-        <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-          <h4 class="font-bold text-white">DevOps & GCP</h4>
-          <p class="text-gray-300">CI/CD, Jenkins, Kubernetes, Terraform, GCP Compute & Storage.</p>
+
+        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold text-lg text-blue-600">Data Science & AI</h3>
+          <p class="text-gray-600 mt-2">ML, AI, GenAI, Python, Projects</p>
         </div>
-        <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-          <h4 class="font-bold text-white">Programming</h4>
-          <p class="text-gray-300">Python, Java, .NET, SAP Modules, and testing automation.</p>
+
+        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold text-lg text-blue-600">DevOps with AWS</h3>
+          <p class="text-gray-600 mt-2">CI/CD, Docker, Jenkins, CloudOps</p>
         </div>
+
+        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold text-lg text-blue-600">Azure + DevOps</h3>
+          <p class="text-gray-600 mt-2">Azure, Pipelines, Infra-as-Code</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold text-lg text-blue-600">Power BI + SQL</h3>
+          <p class="text-gray-600 mt-2">Dashboarding, Analytics, DAX</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold text-lg text-blue-600">Software Testing</h3>
+          <p class="text-gray-600 mt-2">Manual, Automation, Playwright</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
+          <h3 class="font-bold text-lg text-blue-600">Digital Marketing</h3>
+          <p class="text-gray-600 mt-2">SEO, Google Ads, AI Tools</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Job Support -->
-  <section class="py-10 px-4 bg-gray-900 animate-fadeIn">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-2xl font-semibold mb-4 text-white">Job Support & Proxy Help</h3>
-      <ul class="list-disc pl-5 space-y-2 text-gray-300">
-        <li>Daily Support & Task Assistance</li>
-        <li>Real-time Project Help</li>
-        <li>Interview & Proxy Support</li>
-        <li>Available Worldwide | Flexible Timings</li>
-      </ul>
+  <!-- Contact Section -->
+  <section id="contact" class="bg-white py-16 px-4">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+      <p class="text-gray-600 mb-6">Have questions? Want to enroll? Call or WhatsApp us today.</p>
+      <p class="text-lg font-semibold">📞 +91-9440757845</p>
+      <p class="text-lg font-semibold">📍 Hyderabad | Online Training Available</p>
     </div>
   </section>
 
-  <!-- Contact -->
-  <footer class="bg-gray-800 text-white py-6 animate-fadeIn">
-    <div class="max-w-6xl mx-auto text-center">
-      <p>📞 Contact: +91-9440757845</p>
-      <p>📍 Hyderabad | Online Training Available</p>
-      <p class="mt-2 text-sm text-gray-400">© 2025 X-Code Academy. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="max-w-7xl mx-auto text-center text-sm">
+      © 2025 X-Code Academy. All rights reserved.
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
+  <!-- WhatsApp Button -->
   <a href="https://wa.me/919440757845" target="_blank" class="fixed bottom-4 right-4 z-50">
     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" 
          alt="Chat on WhatsApp" 
