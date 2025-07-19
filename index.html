@@ -3,99 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>X Code Academy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <title>X-Code Academy</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #111;
-      color: #fff;
-      opacity: 0;
-      transition: opacity 0.5s ease-in;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
       scroll-behavior: smooth;
     }
-    body.loaded {
-      opacity: 1;
-    }
-
-    /* Navbar */
-    .navbar {
+    header {
+      background: #000;
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      background-color: #000;
-      border-bottom: 2px solid #00ffcc;
     }
-
-    .navbar .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #00ffcc;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
+    header h1 {
       margin: 0;
-      padding: 0;
-    }
-
-    .navbar ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-    }
-
-    .navbar ul li a:hover {
-      color: #00ffcc;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .card {
-      background: #222;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: perspective(600px) rotateY(5deg) rotateX(5deg);
-      box-shadow: 0 20px 30px rgba(0,0,0,0.3);
-    }
-
-    .pulse-button {
-      display: inline-block;
-      background: #00ffcc;
-      color: #000;
-      padding: 12px 24px;
-      margin-top: 20px;
-      border-radius: 5px;
-      font-weight: bold;
+      color: #00d8ff;
       animation: pulse 2s infinite;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .hero {
+      padding: 3rem 2rem;
+      text-align: center;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #00d8ff;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    .section {
+      padding: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .section h3 {
+      color: #00ffc6;
+    }
+
+    ul {
+      line-height: 2;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "✅ ";
+      color: #0f0;
+    }
+
+    .form {
+      background: #111;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
       border: none;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #00d8ff;
+      color: #000;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #00b7d3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #000;
+      color: #aaa;
+      font-size: 0.9rem;
     }
 
     @keyframes pulse {
@@ -104,168 +109,111 @@
       100% { transform: scale(1); }
     }
 
-    .form-section {
-      background: #1a1a1a;
-      padding: 30px 20px;
-      border-radius: 12px;
-      margin-top: 50px;
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    .form-section h2 {
-      text-align: center;
-      color: #00ffcc;
-      margin-bottom: 20px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input, textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      background: #222;
-      color: #fff;
-      font-size: 16px;
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: #888;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .submit-btn {
-      background: #00ffcc;
-      color: #000;
-      font-weight: bold;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .submit-btn:hover {
-      background: #00e6b8;
-    }
-
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      padding: 15px;
-      border-radius: 50%;
-      font-size: 24px;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 1000;
-    }
-
-    footer {
-      background: #1a1a1a;
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-      margin-top: 50px;
-    }
-
-    footer a {
-      color: #00ffcc;
-      text-decoration: none;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @media (max-width: 600px) {
-      .navbar ul {
-        flex-direction: column;
-        background: #111;
-        width: 100%;
-      }
+      .hero h2 { font-size: 1.8rem; }
+      .form { padding: 1rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Sticky Header -->
-  <nav class="navbar">
-    <div class="logo">X Code Academy</div>
+  <header>
+    <h1>X-Code Academy</h1>
+    <a href="mailto:xcodeacadmey@gmail.com">📧 xcodeacadmey@gmail.com</a>
+  </header>
+
+  <section class="hero">
+    <h2>Level Up Your IT Career with X-Code Academy!</h2>
+    <p>Join the top programs with job support, real-time projects, and expert trainers!</p>
+  </section>
+
+  <section class="section">
+    <h3>🌩️ Cloud Platforms:</h3>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#courses">Courses</a></li>
-      <li><a href="#enquiry">Enquiry</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li>Microsoft Azure</li>
+      <li>Amazon AWS</li>
+      <li>Google Cloud Platform (GCP)</li>
     </ul>
-  </nav>
+  </section>
 
-  <div class="content" id="home">
-    <div class="fade-in card" id="courses">🧠 Learn Full Stack Development</div>
-    <div class="fade-in card">📱 Build Android/iOS Apps with Flutter</div>
-    <div class="fade-in card">☁️ Become a Certified Azure Admin</div>
-    <button class="pulse-button">Enroll Now</button>
+  <section class="section">
+    <h3>💻 Programming & Development:</h3>
+    <ul>
+      <li>Python - Automation, APIs & Data Science</li>
+      <li>Java - Backend Development & Enterprise Applications</li>
+      <li>.NET - Full Stack Web Development (C# | ASP.NET | MVC)</li>
+    </ul>
+  </section>
 
-    <div class="fade-in form-section" id="enquiry">
-      <h2>Enquiry Form</h2>
-      <form onsubmit="sendToWhatsApp(event)">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <input type="tel" id="phone" placeholder="Your Phone Number" required />
-        <textarea id="message" rows="4" placeholder="Your Message..." required></textarea>
-        <button class="submit-btn" type="submit">Send via WhatsApp</button>
-      </form>
-    </div>
-  </div>
+  <section class="section">
+    <h3>📚 SAP Modules:</h3>
+    <ul>
+      <li>SAP FICO, MM, ABAP, SD & more</li>
+      <li>Learn from certified consultants!</li>
+    </ul>
+  </section>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919440757845" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp">💬</a>
+  <section class="section">
+    <h3>🧪 Software Testing:</h3>
+    <ul>
+      <li>Manual & Automation Testing</li>
+      <li>Tools: Selenium, Postman, JMeter, NG & more</li>
+    </ul>
+  </section>
 
-  <!-- Footer -->
-  <footer id="contact">
-    📧 Contact us: <a href="mailto:xcodeacadmey@gmail.com">xcodeacadmey@gmail.com</a><br>
-    &copy; 2025 X Code Academy. All rights reserved.
+  <section class="section">
+    <h3>💼 Job Support Available:</h3>
+    <ul>
+      <li>Daily Support</li>
+      <li>Proxy Assistance</li>
+      <li>Real-time Project Help</li>
+      <li>Task Troubleshooting</li>
+      <li>Interview Support</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h3>📞 Contact Us</h3>
+    <p><strong>Phone:</strong> +91-9440757845</p>
+    <p><strong>Email:</strong> xcodeacadmey@gmail.com</p>
+    <p><strong>Availability:</strong> Worldwide | Flexible Timings</p>
+  </section>
+
+  <section class="section form">
+    <h3>📩 Enquiry Form</h3>
+    <form onsubmit="return sendToWhatsApp()">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="course" placeholder="Course Interested In" required />
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send to WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 X-Code Academy. All rights reserved.
   </footer>
 
   <script>
-    window.onload = () => {
-      document.body.classList.add('loaded');
-    };
+    function sendToWhatsApp() {
+      const name = document.getElementById("name").value;
+      const course = document.getElementById("course").value;
+      const message = document.getElementById("message").value;
 
-    // Scroll animation
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
+      const text = `Hello, I'm ${name}. I am interested in ${course}. Message: ${message}`;
+      const phone = "+919440757845";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
-    // Send form data to WhatsApp
-    function sendToWhatsApp(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      const fullMsg = `Hello! I would like to enquire about your courses.%0A
-Name: ${name}%0A
-Email: ${email}%0A
-Phone: ${phone}%0A
-Message: ${message}`;
-
-      const whatsappNumber = "919440757845";
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURI(fullMsg)}`;
-      window.open(whatsappURL, '_blank');
+      window.open(url, '_blank');
+      return false; // Prevent actual form submission
     }
   </script>
 </body>
