@@ -2,109 +2,162 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>X-Code Academy</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-900 font-sans">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X Code Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #111;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.5s ease-in;
+    }
+    body.loaded {
+      opacity: 1;
+    }
 
-  <!-- Sticky Navbar -->
-  <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
-      <div class="flex items-center gap-2">
-        <img src="your-logo.png" alt="Logo" class="w-10 h-10" />
-        <span class="text-xl font-bold">X-Code Academy</span>
-      </div>
-      <nav class="space-x-4 text-sm font-semibold">
-        <a href="#courses" class="hover:text-blue-600">Courses</a>
-        <a href="#about" class="hover:text-blue-600">About</a>
-        <a href="#contact" class="hover:text-blue-600">Contact</a>
-      </nav>
-    </div>
+    header {
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px #000;
+    }
+    h1#typewriter {
+      font-size: 2em;
+      color: #00ffcc;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      background: #222;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: perspective(600px) rotateY(5deg) rotateX(5deg);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+    }
+
+    .pulse-button {
+      display: inline-block;
+      background: #00ffcc;
+      color: #000;
+      padding: 12px 24px;
+      margin-top: 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+      border: none;
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    footer {
+      background: #1a1a1a;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+    footer a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="typewriter"></h1>
   </header>
 
-  <!-- Hero Section -->
-  <section class="pt-24 bg-blue-700 text-white text-center py-20">
-    <div class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-4">Empowering Future Tech Leaders</h1>
-      <p class="text-lg mb-6">Master Full Stack Development, Cloud, DevOps, Data Science & More</p>
-      <a href="#courses" class="bg-white text-blue-700 font-semibold px-6 py-2 rounded hover:bg-gray-200">Explore Courses</a>
-    </div>
-  </section>
+  <div class="content">
+    <div class="fade-in card">🧠 Learn Full Stack Development</div>
+    <div class="fade-in card">📱 Build Android/iOS Apps with Flutter</div>
+    <div class="fade-in card">☁️ Become a Certified Azure Admin</div>
+    <button class="pulse-button">Enroll Now</button>
+  </div>
 
-  <!-- Courses Section -->
-  <section id="courses" class="bg-gray-100 py-16 px-4">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-10 text-gray-800">Our Popular Courses</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        
-        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
-          <h3 class="font-bold text-lg text-blue-600">Full Stack Java</h3>
-          <p class="text-gray-600 mt-2">Core Java, Spring Boot, Microservices & Project</p>
-        </div>
+  <!-- WhatsApp Ping Button -->
+  <a href="https://wa.me/918184899919" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp">💬</a>
 
-        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
-          <h3 class="font-bold text-lg text-blue-600">Python Full Stack</h3>
-          <p class="text-gray-600 mt-2">Python, Django, REST APIs, React</p>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
-          <h3 class="font-bold text-lg text-blue-600">Data Science & AI</h3>
-          <p class="text-gray-600 mt-2">ML, AI, GenAI, Python, Projects</p>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
-          <h3 class="font-bold text-lg text-blue-600">DevOps with AWS</h3>
-          <p class="text-gray-600 mt-2">CI/CD, Docker, Jenkins, CloudOps</p>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
-          <h3 class="font-bold text-lg text-blue-600">Azure + DevOps</h3>
-          <p class="text-gray-600 mt-2">Azure, Pipelines, Infra-as-Code</p>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
-          <h3 class="font-bold text-lg text-blue-600">Power BI + SQL</h3>
-          <p class="text-gray-600 mt-2">Dashboarding, Analytics, DAX</p>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
-          <h3 class="font-bold text-lg text-blue-600">Software Testing</h3>
-          <p class="text-gray-600 mt-2">Manual, Automation, Playwright</p>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-5 hover:shadow-xl transition duration-300">
-          <h3 class="font-bold text-lg text-blue-600">Digital Marketing</h3>
-          <p class="text-gray-600 mt-2">SEO, Google Ads, AI Tools</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="bg-white py-16 px-4">
-    <div class="max-w-xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-      <p class="text-gray-600 mb-6">Have questions? Want to enroll? Call or WhatsApp us today.</p>
-      <p class="text-lg font-semibold">📞 +91-9440757845</p>
-      <p class="text-lg font-semibold">📍 Hyderabad | Online Training Available</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
-    <div class="max-w-7xl mx-auto text-center text-sm">
-      © 2025 X-Code Academy. All rights reserved.
-    </div>
+  <!-- Footer with Email -->
+  <footer>
+    📧 Contact us: <a href="mailto:xcodeacadmey@gmail.com">xcodeacadmey@gmail.com</a><br>
+    &copy; 2025 X Code Academy. All rights reserved.
   </footer>
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/919440757845" target="_blank" class="fixed bottom-4 right-4 z-50">
-    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" 
-         alt="Chat on WhatsApp" 
-         class="w-12 h-12 hover:scale-110 transition-transform duration-300 rounded-full shadow-lg" />
-  </a>
+  <script>
+    // Typing Effect
+    const text = "Welcome to X Code Academy!";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+      }
+    }
+    window.onload = () => {
+      document.body.classList.add('loaded');
+      typeWriter();
+    };
 
+    // Scroll fade animation
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 </body>
 </html>
